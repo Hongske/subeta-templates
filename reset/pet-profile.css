@@ -1,1 +1,68 @@
 /** Pet profile reset code **/
+
+/* Correct box-sizing for everything.
+ * A box-sizing of border-box makes sure padding is included in an element's dimensions.
+ */
+* {
+    box-sizing: border-box;
+}
+
+/* Reset traits for outer wrapper containers.
+ */
+html,body {
+    height:100%;
+    padding:0;
+    margin:0;
+}
+#page,#content,.container-fluid,#main-content {
+    padding:0;
+    margin:0;
+    width:auto!important;
+    position:static;
+    min-height:100%;
+}
+#main-content {
+    background-image: none;
+    float: none;
+}
+#content {
+    height: auto!important;
+}
+
+/* Hide elements:
+   - header, footer, sidebar, bookmarks
+   - random events, news banner, and hustler
+   - floating items
+*/
+iframe,#postcards,#header,#menu,#events-bubble-wrapper,#sidebar,#bookmarks,#rightbg,#random_events,.hustler,.floating_item,.new-news-announcement-banner {
+    display: none!important;
+}
+
+/* This is the div that is the direct parent of the different pet information sections.
+ * #pet_info has 60% width by default, this code resets that.
+ */
+#pet_info {
+    min-width: unset;
+    width: auto;
+}
+
+/* We get rid of the float because these containers have no business being floated,
+ * and are much easier to work with via the display attribute
+ * which can be overwritten as there is no !important here.
+ */
+#column_1, #column_2, #column_3, #pet_treasure, #pet_desc, #pet_friends{
+    margin: 0;
+    padding: 0;
+    float: none!important;
+    display: inline-block;
+    vertical-align: top;
+    width: unset;
+}
+
+/* Now we are going to correct/reset some styles on the specific profile sections. */
+
+/* Pet statistics */
+
+/* Pet treasure */
+
+/* Pet friends */
