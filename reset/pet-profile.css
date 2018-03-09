@@ -20,6 +20,13 @@ html,body {
     width:auto!important;
     position:static;
     min-height:100%;
+    background:none;
+    background-color:transparent;
+    border:0;
+    border-right:0;
+}
+#page {
+    margin:0!important;
 }
 #main-content {
     background-image: none;
@@ -27,6 +34,7 @@ html,body {
 }
 #content {
     height: auto!important;
+    overflow: unset;
 }
 
 /* Hide elements:
@@ -50,7 +58,7 @@ iframe,#postcards,#header,#menu,#events-bubble-wrapper,#sidebar,#bookmarks,#righ
  * and are much easier to work with via the display attribute
  * which can be overwritten as there is no !important here.
  */
-#column_1, #column_2, #column_3, #pet_treasure, #pet_desc, #pet_friends{
+#column_1, #column_2, #column_3, #pet_treasure {
     margin: 0;
     padding: 0;
     float: none!important;
@@ -58,11 +66,34 @@ iframe,#postcards,#header,#menu,#events-bubble-wrapper,#sidebar,#bookmarks,#righ
     vertical-align: top;
     width: unset;
 }
+#pet_desc, #pet_friends {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: unset;
+}
+#pet_info>br, br[clear='all'] {
+    display: none;
+}
 
 /* Now we are going to correct/reset some styles on the specific profile sections. */
 
-/* Pet statistics */
+/* Pet statistics
+ * - Correct the inner height of stat bars
+ */
+.statbar div.stat {
+    height: 100%;
+}
 
 /* Pet treasure */
 
-/* Pet friends */
+
+/* Pet friends
+ * - Change from float to inline-block so that they remain in document flow
+ */
+.friend_div {
+    float: none;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+}
