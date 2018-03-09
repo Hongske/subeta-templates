@@ -1,1 +1,44 @@
 /** User profile reset code. **/
+
+/* Remove background images and colours */
+body, #navigation, .block, .header, .info_block, .comment_table {
+    background: none;
+}
+
+/* Remove borders + rounded corners */
+#navigation, ul.column li, .header, #content_pets .avatar_head, .comment_table,
+input, textarea, select {
+    border: none;
+} ul.column li, #content_pets .avatar_head {
+    border-radius: 0;
+}
+
+/* Fix box-model */
+.div_float {
+    width: calc(100% / 3);
+    padding: 0;
+} ul.column {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+} ul.column li {
+    margin: 0;
+}
+
+/* Fix header letter-spacing */
+.header {
+    letter-spacing: unset;
+}
+
+/* Fix pet alignment */
+#content_pets .avatar_head {
+    margin: 0 auto;
+}
+
+/* Fix comment box + button */
+#content_comment textarea,
+#content_comment input {
+    width: 100% !important;
+} #content_comment input {
+    background: transparent;
+}
