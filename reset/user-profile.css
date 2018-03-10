@@ -18,25 +18,33 @@
 }
 
 /* Now we're going to reset some basic styles:
- * - remove backgrounds
+ * - reset height
+ * - remove padding
  * - remove borders
  * - remove border-radius (= rounded corners)
- * - remove letter spacing
+ * - remove backgrounds
+ * - remove letter-spacing
  */
-body, #navigation, .block, .header, .info_block, .comment_table, #content_comment input {
-    background: none;
-} #navigation, ul.column li, .header, #content_pets .avatar_head, .comment_table, input, textarea, select {
+.header {
+    height: auto;
+} #lastfm-show, #lastfm-show li {
+    margin: 0;
+} #navigation, .header, .info_block, .lastfm-album, table[id^="lastfm-"] td, #lastfm-show li {
+    padding: 0;
+} #navigation, ul.column li, .header, #content_pets .avatar_head, .comment_table, input, textarea, select, .lastfm-album img, #lastfm-show li {
     border: none;
-} ul.column li, #content_pets .avatar_head {
+} ul.column li, #content_pets .avatar_head, .lastfm-album img, #lastfm-show li {
     border-radius: 0;
-} .header {
+} body, #navigation, .block, .header, .info_block, .comment_table, #content_comment input, #lastfm-show li, #lastfm-show li:hover {
+    background: none;
+} #navigation, .header {
     letter-spacing: unset;
 }
 
 /* Lastly we're going to do some block-specific modifications, namely:
  * - center the pet images
  * - make the comment box and button full-width
- * The latter had to be done by adding !important", because the default style
+ * The latter had to be done by adding "!important", because the default style
  * was set via inline-styles and this is the only way to override it.
  */
 #content_pets .avatar_head {
