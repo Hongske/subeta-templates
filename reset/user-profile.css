@@ -1,1 +1,63 @@
 /** User profile reset code. **/
+
+/* A profile has three columns. This code corrects their widths to a default of
+ * 1/3 of the page width.
+ * - To modify the width: override the width rule on .div_float
+ * - To modify the spacing in-between columns: override the padding-left and
+ *   padding-right on .div_float.
+ */
+.div_float {
+    width: calc(100% / 3);
+    padding: 0;
+}
+ul.column {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+ul.column li {
+    margin: 0;
+}
+
+/* Now we're going to reset some basic styles:
+ * - reset height
+ * - remove padding
+ * - remove borders
+ * - remove border-radius (= rounded corners)
+ * - remove backgrounds
+ * - remove letter-spacing
+ */
+.header {
+    height: auto;
+}
+#lastfm-show, #lastfm-show li {
+    margin: 0;
+}
+#navigation, .header, .info_block, .lastfm-album, table[id^="lastfm-"] td, #lastfm-show li {
+    padding: 0;
+}
+#navigation, ul.column li, .header, #content_pets .avatar_head, .comment_table, input, textarea, select, .lastfm-album img, #lastfm-show li {
+    border: none;
+}
+ul.column li, #content_pets .avatar_head, .lastfm-album img, #lastfm-show li {
+    border-radius: 0;
+}
+body, #navigation, .block, .header, .info_block, .comment_table, #content_comment input, #lastfm-show li, #lastfm-show li:hover {
+    background: none;
+}
+#navigation, .header {
+    letter-spacing: unset;
+}
+
+/* Lastly we're going to do some block-specific modifications, namely:
+ * - center the pet images
+ * - make the comment box and button full-width
+ * The latter had to be done by adding "!important", because the default style
+ * was set via inline-styles and this is the only way to override it.
+ */
+#content_pets .avatar_head {
+    margin: 0 auto;
+}
+#content_comment textarea, #content_comment input {
+    width: 100% !important;
+}
